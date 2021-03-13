@@ -3,10 +3,12 @@
   </div>
 <table *ngIf="dataLoaded==true" class = "table">
     <thead>
-        <tr>Id</tr>
-        <tr>User Id</tr>
-        <tr>Müşteri Kodu</tr>
-        <tr>Müşteri Adı</tr>        
+        <tr>
+            <th>Id</th>
+            <th>User Id</th>
+            <th>Müşteri Kodu</th>
+            <th>Müşteri Adı</th>        
+        </tr>        
     </thead>
     <tr *ngFor = "let customer of customers">
         <td>{{customer.id}}</td>

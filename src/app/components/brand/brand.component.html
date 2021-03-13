@@ -3,9 +3,11 @@
   </div>
 <table *ngIf="dataLoaded==true" class = "table">
     <thead>
-        <tr>Id</tr>
-        <tr>Marka Kodu</tr>
-        <tr>Marka Adı</tr>        
+        <tr>
+            <th>Id</th>
+            <th>Marka Kodu</th>
+            <th>Marka Adı</th>        
+        </tr>        
     </thead>
     <tr *ngFor = "let brand of brands">
         <td>{{brand.id}}</td>

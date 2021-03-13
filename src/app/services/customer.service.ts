@@ -7,7 +7,7 @@ import { CustomerResponseModel } from '../models/customerresponseModel';
   providedIn: 'root'
 })
 export class CustomerService {
-  apiUrl = "https://localhost:44338/api/Customers/GetAll";
+  apiUrl = "https://localhost:44329/api/Customers/GetAll";
 
   constructor(private httpClient:HttpClient) { }//private httpClient:HttpClient bir injection dır!!! 'private' sadece bu class da geçerli demek javascripte
   

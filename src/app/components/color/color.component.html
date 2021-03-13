@@ -3,9 +3,12 @@
   </div>
 <table *ngIf="dataLoaded==true" class = "table">
     <thead>
-        <tr>Id</tr>
-        <tr>Renk Kodu</tr>
-        <tr>Renk Adı</tr>      
+        <tr>
+            <th>Id</th>
+            <th>Renk Kodu</th>
+            <th>Renk Adı</th>      
+        </tr>
+        
     </thead>
     <tr *ngFor = "let color of colors">
         <td>{{color.id}}</td> 

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BrandService {
-  apiUrl = "https://localhost:44338/api/Brands/GetAll";
+  apiUrl = "https://localhost:44329/api/Brands/GetAll";
 
   constructor(private httpClient:HttpClient) { }//private httpClient:HttpClient bir injection dır!!! 'private' sadece bu class da geçerli demek javascripte
   

@@ -7,7 +7,7 @@ import { ColorResponseModel } from '../models/colorResponseModel';
   providedIn: 'root'
 })
 export class ColorService {
-  apiUrl = "https://localhost:44338/api/Colors/GetAll";
+  apiUrl = "https://localhost:44329/api/Colors/GetAll";
 
   constructor(private httpClient:HttpClient) { }//private httpClient:HttpClient bir injection dır!!! 'private' sadece bu class da geçerli demek javascripte
   
