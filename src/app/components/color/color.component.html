@@ -1,23 +1,20 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Renk ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterColorText" placeholder="arama ifadesi giriniz">
+    <!--  componentteki filterText alanına binding işlemi : [(ngModel)]="filterText" -->
+    <!--  ngModel'ü kullanabilmek için  app.module.ts dosyasına import işlemi yapmalıyız -- import {FormsModule} from '@angular/forms';   imports: [FormsModule]-->
   </div>
-<table *ngIf="dataLoaded==true" class = "table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Renk Kodu</th>
-            <th>Renk Adı</th>      
-        </tr>
-        
-    </thead>
-    <tr *ngFor = "let color of colors">
-        <td>{{color.id}}</td> 
-        <td>{{color.code}}</td>
-        <td>{{color.name}}</td>
-    </tr>
-</table>
+  <div *ngIf="filterText.length >2" class="alert alert-success">
+    <!-- class="alert alert-primary, alert-varning, alert-success,alert-danger, alert-primary-->
+    {{filterText}} aradınız
+</div>
 
-
-
-<!-- Bracket Pair Coloriser extensionunu yükle (renklendirmeler için)-->
-<!-- Prettier - Code Formatter extensionunu yükle (formatlama için)-->
+<h5>Renkler</h5>
+<ul class="list-group">
+    <li [class]="getAllColorClass()" routerLink ="/cars">Tüm Renkler</li>
+    <li (click)="setCurrentColor(color)"
+        routerLink = "/cars/color/{{color.id}}"
+        *ngFor="let color of colors  | colorFilterPipe:filterText"
+        [class]="getCurrentColorClass(color)">
+        {{color.name}}</li>   <!-- komponennteki bir bilgi ile değiştirmek istiyor isen [class] kullan-->
+</ul>

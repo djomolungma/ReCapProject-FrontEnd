@@ -10,6 +10,13 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
+import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
+import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
+import { FormsModule } from '@angular/forms';
+import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +26,19 @@ import { RentalComponent } from './components/rental/rental.component';
     ColorComponent,
     CustomerComponent,
     CarComponent,
-    RentalComponent
+    RentalComponent,
+    CarDetailComponent,
+    FilterPipePipe,
+    CarFilterPipePipe,
+    BrandFilterPipePipe,
+    ColorFilterPipePipe,
+    CarFilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //api'ye request gönderebilmemiz için bu module nin import edilmesi gerekir 
+    HttpClientModule, //api'ye request gönderebilmemiz için bu module nin import edilmesi gerekir 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

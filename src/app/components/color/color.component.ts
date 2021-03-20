@@ -10,8 +10,10 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
 
   colors:Color[] =[];
+  currentColor:Color;//currentBrand:Brand = {brandId:0,brandName:""};  tsconfig.json den "strictPropertyInitialization": false yapıldı
   dataLoaded = false;
-
+  filterText="";
+  
   constructor(private colorService:ColorService) { }
 
   ngOnInit(): void {
@@ -24,4 +26,29 @@ export class ColorComponent implements OnInit {
       this.dataLoaded =true;
     }
     )}
+
+    setCurrentColor(color:Color){
+      //console.log(color.name);
+      this.currentColor = color;
+    }
+
+    getCurrentColorClass(color:Color){
+        if(color == this.currentColor)
+        {
+          return "list-group-item active";
+        }
+        else{
+          return "list-group-item";
+        }
+    }
+
+    getAllColorClass(){
+      if(!this.currentColor)
+      {
+        return "list-group-item active";
+      }
+      else{
+        return "list-group-item";
+      }
+    }
 }

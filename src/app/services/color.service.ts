@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ColorResponseModel } from '../models/colorResponseModel';
+import { Color } from '../models/color';
+//import { ColorResponseModel } from '../models/colorResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,8 @@ export class ColorService {
 
   constructor(private httpClient:HttpClient) { }//private httpClient:HttpClient bir injection dır!!! 'private' sadece bu class da geçerli demek javascripte
   
-  getColors():Observable<ColorResponseModel>{
+  getColors():Observable<ListResponseModel<Color>>{
     //api ye bağlama kodu
-    return this.httpClient.get<ColorResponseModel>(this.apiUrl);//this bu sınıfı ifade eder // get<BrandResponseModel> mepleme işlemi      
+    return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl);//this bu sınıfı ifade eder // get<BrandResponseModel> mepleme işlemi      
   }
 }

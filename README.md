@@ -1,4 +1,4 @@
-# ReCap
+# ReCapProject-FrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
@@ -26,6 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## First Installation help
 install https://nodejs.org/en/   	(1. olarak node kurulacak)
 
 install https://code.visualstudio.com/  (2. olarak node kurulacak)
@@ -75,3 +76,5 @@ to get data from webApi add import to app.module
 	imports: [HttpClientModule]
 
 for bootstrap version update "npm install bootstrap@5.0.0-beta2" press enter
+
+to install jquery "npm install jquery" press enter and add "./node_modules/jquery/dist/jquery.min.js", "./node_modules/bootstrap/dist/js/bootstrap.min.js" line to "scripts": [] array, restart project
